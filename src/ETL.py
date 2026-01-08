@@ -1,6 +1,7 @@
 # Fecha: 08/01/2026
 # Autor: Jeffersson Alexander Pretell Velásquez
 # Descripción: Módulo ETL para la extracción, transformación y carga de datos. 
+
 import pandas as pd
 def extract_data(url = str,extension = str) -> pd.DataFrame:
     """
