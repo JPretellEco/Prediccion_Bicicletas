@@ -124,8 +124,17 @@ def load_data(data: pd.DataFrame, path: str,name: str) -> None:
 
 if __name__ == "__main__":
 
-    data = extract_data(url='G:\\Mi unidad\\DATA SCIENCE\\PYNTHON\\VSC\\Prediccion_Bicicletas\\data\\raw\\train\\train.csv',extension='csv')
-    data = transform_data(data=data)
-    load_data(data=data,
-              path='G:\\Mi unidad\\DATA SCIENCE\\PYNTHON\\VSC\\Prediccion_Bicicletas\\data\\processed\\',
+    # Para el conjunto de entrenamiento
+
+    train = extract_data(url='G:\\Mi unidad\\DATA SCIENCE\\PYNTHON\\VSC\\Prediccion_Bicicletas\\data\\raw\\train\\train.csv',extension='csv')
+    train = transform_data(data=train)
+    load_data(data=train,
+              path='G:\\Mi unidad\\DATA SCIENCE\\PYNTHON\\VSC\\Prediccion_Bicicletas\\data\\processed\\train\\',
               name='train_eda')
+    
+    # Para el conjunto de prueba
+    test = extract_data(url='G:\\Mi unidad\\DATA SCIENCE\\PYNTHON\\VSC\\Prediccion_Bicicletas\\data\\raw\\test\\test.csv',extension='csv')
+    test = transform_data(data=test)
+    load_data(data=test,
+              path='G:\\Mi unidad\\DATA SCIENCE\\PYNTHON\\VSC\\Prediccion_Bicicletas\\data\\processed\\test\\',
+              name='test_eda')
